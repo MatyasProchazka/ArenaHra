@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,11 +19,11 @@ namespace ArenaHra
         private bool koloHrace = true;
         private bool hotovo = false;
 
-        public event EventHandler ZapasFinished;
+        public event EventHandler Finished;
         public ArenaBoje()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -102,16 +103,26 @@ namespace ArenaHra
                     MessageBox.Show("Kurva 2");
                 }
                 else {
-                    MessageBox.Show("Vyhra");
-                    OnZapasFinished();
+                    MessageBox.Show("Vyhra,vracis se do menu");
+                    OnFinished();
                 }
                 
             }
         }
 
-       protected virtual void OnZapasFinished()
+       protected virtual void OnFinished()
         {
-            MessageBox.Show("vracis se zpatky do menu");
+            UkoncovaciPriprava();
+            Hide();
+
+            if (Finished != null)
+            {
+                Finished(this, EventArgs.Empty);
+            }
+        }
+
+        private void UkoncovaciPriprava()
+        {
             utokBtn.Show();
             hrac.Vylecit();
             protivnik.Vylecit();
@@ -123,14 +134,15 @@ namespace ArenaHra
             backgroundWorker1.ProgressChanged -= backgroundWorker1_ProgressChanged;
             backgroundWorker1.DoWork -= backgroundWorker1_DoWork; //The scrape
             backgroundWorker1.RunWorkerCompleted -= backgroundWorker1_RunWorkerCompleted;
-            Hide();
-            
-            if (ZapasFinished != null)
-            {
-                ZapasFinished(this, EventArgs.Empty);
-            }
+
         }
 
 
+        public void UpdateStaty()
+        {
+            hracZivot.Text = hrac.MaxZivot.ToString();
+        }
     }
+
+    
 }

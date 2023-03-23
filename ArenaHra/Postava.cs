@@ -9,21 +9,23 @@ namespace ArenaHra
     public class Postava
     {
         public string Jmeno { get; private set; }
-        protected int utok;
-        protected int maxZivot;
+        public int Utok { get; private set; }
+        public int MaxZivot { get; private set; }
         protected int zivot;
+        public int Penize { get; private set; }
 
         public Postava(string jmeno, int utok, int maxZivot)
         {
             this.Jmeno = jmeno;
-            this.utok = utok;
-            this.maxZivot = maxZivot;
+            this.Utok = utok;
+            this.MaxZivot = maxZivot;
             this.zivot = maxZivot;
+            Penize = 0;
         }
 
         public void Utoc(Postava protivnik)
         {
-            protivnik.Obrana(utok);
+            protivnik.Obrana(Utok);
         }
 
         public void Obrana(int poskozeni)
@@ -42,7 +44,7 @@ namespace ArenaHra
 
         public int PodilZivotu()
         {
-            int podil = Convert.ToInt32(((double)zivot / (double)maxZivot) * 100);
+            int podil = Convert.ToInt32(((double)zivot / (double)MaxZivot) * 100);
             return podil > 0 ? podil : 0;
         }
         
@@ -53,7 +55,23 @@ namespace ArenaHra
 
         public void Vylecit()
         {
-            zivot = maxZivot;
+            zivot = MaxZivot;
+        }
+
+        public void PridatUtok()
+        {
+            Utok += 1;
+        }
+
+        public void PridatMaxZivoty()
+        {
+            MaxZivot += 10;
+            zivot = MaxZivot;
+        }
+
+        public void PridatPenize()
+        {
+            Penize += 1;
         }
     }
 
