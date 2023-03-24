@@ -4,19 +4,21 @@ namespace ArenaHra
 {
     public partial class MainForm : Form
     {
-        private Postava hrac;
+        private Hrac hrac;
         private Postava protivnik;
         
 
         public MainForm()
         {
-            hrac = new Postava("Matyas", 10, 100);
+            Zbran zbranHrac = new Zbran("Mec", 3, 15, 10);
+            Zbran zbranProtivnik = new Zbran("Nic", 0, 0, 0);
+            hrac = new Hrac("Matyas", 10, 100, zbranHrac);
             protivnik = new Postava("Deges", 5, 150);
             InitializeComponent();
             arenaBoje.Hide();
             staty.Hide();
-            arenaBoje.PridatPostavy(hrac, protivnik);
-            staty.PridatPostavu(hrac);
+            arenaBoje.PridatHrace(hrac);
+            staty.PridatHrace(hrac);
             arenaBoje.Finished += OnFinished;
             staty.Finished += OnFinished;
             

@@ -36,6 +36,8 @@
             this.hracProgressBar = new System.Windows.Forms.ProgressBar();
             this.protivnikProgressBar = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.hracUbralLabel = new System.Windows.Forms.Label();
+            this.protivnikUbralLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // protivnikZivot
@@ -104,10 +106,32 @@
             this.protivnikProgressBar.TabIndex = 6;
             this.protivnikProgressBar.Value = 100;
             // 
+            // hracUbralLabel
+            // 
+            this.hracUbralLabel.AutoSize = true;
+            this.hracUbralLabel.ForeColor = System.Drawing.Color.Red;
+            this.hracUbralLabel.Location = new System.Drawing.Point(534, 246);
+            this.hracUbralLabel.Name = "hracUbralLabel";
+            this.hracUbralLabel.Size = new System.Drawing.Size(39, 48);
+            this.hracUbralLabel.TabIndex = 7;
+            this.hracUbralLabel.Text = "0";
+            // 
+            // protivnikUbralLabel
+            // 
+            this.protivnikUbralLabel.AutoSize = true;
+            this.protivnikUbralLabel.ForeColor = System.Drawing.Color.Red;
+            this.protivnikUbralLabel.Location = new System.Drawing.Point(345, 246);
+            this.protivnikUbralLabel.Name = "protivnikUbralLabel";
+            this.protivnikUbralLabel.Size = new System.Drawing.Size(39, 48);
+            this.protivnikUbralLabel.TabIndex = 8;
+            this.protivnikUbralLabel.Text = "0";
+            // 
             // ArenaBoje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.protivnikUbralLabel);
+            this.Controls.Add(this.hracUbralLabel);
             this.Controls.Add(this.protivnikProgressBar);
             this.Controls.Add(this.hracProgressBar);
             this.Controls.Add(this.hracZivot);
@@ -133,5 +157,7 @@
         private ProgressBar hracProgressBar;
         private ProgressBar protivnikProgressBar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label hracUbralLabel;
+        private Label protivnikUbralLabel;
     }
 }

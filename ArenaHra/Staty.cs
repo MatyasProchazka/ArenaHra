@@ -12,14 +12,14 @@ namespace ArenaHra
 {
     public partial class Staty : UserControl
     {
-        private Postava hrac;
+        private Hrac hrac;
         public event EventHandler Finished;
         public Staty()
         {
             InitializeComponent();
         }
 
-        public void PridatPostavu(Postava hrac)
+        public void PridatHrace(Hrac hrac)
         {
             if (hrac != null)
             {
