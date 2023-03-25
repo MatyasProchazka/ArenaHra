@@ -17,13 +17,11 @@ namespace ArenaHra
         private Hrac hrac;
         private Postava protivnik;
         private bool koloHrace = true;
-        private bool poprve = true;
 
         public event EventHandler Finished;
         public ArenaBoje()
         {
             InitializeComponent();
-
         }
 
 
@@ -31,8 +29,9 @@ namespace ArenaHra
         {
             protivnik = hrac.VygenerovatProtivnika();
             protivnikJmeno.Text = protivnik.Jmeno;
-            protivnikZivot.Text = protivnik.Zivot().ToString();
+            protivnikZivot.Text = String.Format(protivnik.Zivot().ToString() + "/" + protivnik.MaxZivot.ToString());
             protivnikUbralLabel.Hide();
+            protivnikUtokLabel.Text = String.Format("Utok: " + protivnik.Utok.ToString());
         }
 
         public void PridatHrace(Hrac hrac)
@@ -40,8 +39,9 @@ namespace ArenaHra
 
             this.hrac = hrac;
             hracJmeno.Text = hrac.Jmeno;
-            hracZivot.Text = hrac.Zivot().ToString();
+            hracZivot.Text = String.Format(hrac.Zivot().ToString() + "/" + hrac.MaxZivot.ToString());
             hracUbralLabel.Hide();
+            hracUtokLabel.Text = String.Format("Utok: " + hrac.Utok.ToString());
             PridatProtivnika();
         }
 
@@ -53,11 +53,6 @@ namespace ArenaHra
             backgroundWorker1.DoWork += backgroundWorker1_DoWork; //The scrape
             backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
 
-            if (poprve)
-            {
-                
-            }
-            poprve = false;
             utokBtn.Hide();
             backgroundWorker1.RunWorkerAsync();
 
@@ -90,7 +85,7 @@ namespace ArenaHra
                     protivnikUbralLabel.Hide();
                     hracUbralLabel.Text = String.Format("-" + hrac.Utoc(protivnik).ToString());
                     hracUbralLabel.Show();
-                    protivnikZivot.Text = protivnik.Zivot().ToString();
+                    protivnikZivot.Text = String.Format(protivnik.Zivot().ToString() + "/" + protivnik.MaxZivot.ToString());
                     protivnikProgressBar.Value = protivnik.PodilZivotu();
                     koloHrace = false;
                 }
@@ -103,7 +98,7 @@ namespace ArenaHra
                     hracUbralLabel.Hide();
                     protivnikUbralLabel.Text = String.Format("-" + protivnik.Utoc(hrac).ToString());
                     protivnikUbralLabel.Show();
-                    hracZivot.Text = hrac.Zivot().ToString();
+                    hracZivot.Text = String.Format(hrac.Zivot().ToString() + "/" + hrac.MaxZivot.ToString());
                     hracProgressBar.Value = hrac.PodilZivotu();
                     koloHrace = true;
                 }
@@ -157,9 +152,9 @@ namespace ArenaHra
             hrac.Vylecit();
             protivnik.Vylecit();
             koloHrace = true;
-            hracZivot.Text = hrac.Zivot().ToString();
+            hracZivot.Text = String.Format(hrac.Zivot().ToString() + "/" + hrac.MaxZivot.ToString());
             hracProgressBar.Value = 100;
-            protivnikZivot.Text = protivnik.Zivot().ToString();
+            protivnikZivot.Text = String.Format(protivnik.Zivot().ToString() + "/" + protivnik.MaxZivot.ToString());
             protivnikJmeno.Text = protivnik.Jmeno;
             protivnikProgressBar.Value = 100;
             hracUbralLabel.Hide();
@@ -173,7 +168,9 @@ namespace ArenaHra
 
         public void UpdateStaty()
         {
-            hracZivot.Text = hrac.MaxZivot.ToString();
+            hracZivot.Text = String.Format(hrac.MaxZivot.ToString() + "/" + hrac.MaxZivot.ToString());
+            protivnikUtokLabel.Text = String.Format("Utok: " + protivnik.Utok.ToString());
+            hracUtokLabel.Text = String.Format("Utok: " + hrac.Utok.ToString());
         }
     }
 

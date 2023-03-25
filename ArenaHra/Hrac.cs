@@ -16,7 +16,7 @@ namespace ArenaHra
         public new int Utok { get; private set; }
         protected new int zivot;
         public int Penize { get; private set; }
-        string[] listJmenProtivnik = { "Hugo", "Martin", "Jonatan", "Jakub", "SKeleton", "Roman", "Baba yaga", "Jeliman", "SEXY MUZ", "DEBIL" };
+        string[] listJmenProtivnik = { "Hugo", "Martin", "Jon", "Jakub", "SKeleton", "Roman", "Baba", "Jeliman", "SEXY", "DEBIL" };
 
         public Hrac(string jmeno, int utok, int maxZivot, Zbran zbran) : base(jmeno, utok, maxZivot)
         {

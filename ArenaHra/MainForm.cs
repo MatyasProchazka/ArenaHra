@@ -11,9 +11,7 @@ namespace ArenaHra
         public MainForm()
         {
             Zbran zbranHrac = new Zbran("Mec", 3, 15, 10);
-            Zbran zbranProtivnik = new Zbran("Nic", 0, 0, 0);
             hrac = new Hrac("Matyas", 10, 100, zbranHrac);
-            protivnik = new Postava("Deges", 5, 150);
             InitializeComponent();
             arenaBoje.Hide();
             staty.Hide();

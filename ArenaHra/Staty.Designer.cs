@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.hracJmenoLabel = new System.Windows.Forms.Label();
             this.hracUtokLabel = new System.Windows.Forms.Label();
             this.hracMaxZivotyLabel = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.maxZivotPridatBtn = new System.Windows.Forms.Button();
             this.penizePridatBtn = new System.Windows.Forms.Button();
             this.odejitBtn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // hracJmenoLabel
@@ -43,7 +45,7 @@
             this.hracJmenoLabel.AutoSize = true;
             this.hracJmenoLabel.Location = new System.Drawing.Point(460, 44);
             this.hracJmenoLabel.Name = "hracJmenoLabel";
-            this.hracJmenoLabel.Size = new System.Drawing.Size(62, 32);
+            this.hracJmenoLabel.Size = new System.Drawing.Size(94, 48);
             this.hracJmenoLabel.TabIndex = 0;
             this.hracJmenoLabel.Text = "Hrac";
             // 
@@ -52,7 +54,7 @@
             this.hracUtokLabel.AutoSize = true;
             this.hracUtokLabel.Location = new System.Drawing.Point(115, 170);
             this.hracUtokLabel.Name = "hracUtokLabel";
-            this.hracUtokLabel.Size = new System.Drawing.Size(27, 32);
+            this.hracUtokLabel.Size = new System.Drawing.Size(39, 48);
             this.hracUtokLabel.TabIndex = 1;
             this.hracUtokLabel.Text = "0";
             // 
@@ -61,7 +63,7 @@
             this.hracMaxZivotyLabel.AutoSize = true;
             this.hracMaxZivotyLabel.Location = new System.Drawing.Point(491, 170);
             this.hracMaxZivotyLabel.Name = "hracMaxZivotyLabel";
-            this.hracMaxZivotyLabel.Size = new System.Drawing.Size(27, 32);
+            this.hracMaxZivotyLabel.Size = new System.Drawing.Size(39, 48);
             this.hracMaxZivotyLabel.TabIndex = 2;
             this.hracMaxZivotyLabel.Text = "0";
             // 
@@ -70,7 +72,7 @@
             this.hracPenizeLabel.AutoSize = true;
             this.hracPenizeLabel.Location = new System.Drawing.Point(802, 170);
             this.hracPenizeLabel.Name = "hracPenizeLabel";
-            this.hracPenizeLabel.Size = new System.Drawing.Size(27, 32);
+            this.hracPenizeLabel.Size = new System.Drawing.Size(39, 48);
             this.hracPenizeLabel.TabIndex = 3;
             this.hracPenizeLabel.Text = "0";
             // 
@@ -83,6 +85,7 @@
             this.utokPridaniBtn.Text = "+";
             this.utokPridaniBtn.UseVisualStyleBackColor = true;
             this.utokPridaniBtn.Click += new System.EventHandler(this.utokPridaniBtn_Click);
+            this.utokPridaniBtn.MouseHover += new System.EventHandler(this.utokPridaniBtn_MouseHover);
             // 
             // maxZivotPridatBtn
             // 
@@ -116,7 +119,7 @@
             // 
             // Staty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.odejitBtn);
             this.Controls.Add(this.penizePridatBtn);
@@ -145,5 +148,6 @@
         private Button maxZivotPridatBtn;
         private Button penizePridatBtn;
         private Button odejitBtn;
+        private ToolTip toolTip1;
     }
 }

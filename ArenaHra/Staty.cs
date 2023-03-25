@@ -63,5 +63,9 @@ namespace ArenaHra
             }
         }
 
+        private void utokPridaniBtn_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(utokPridaniBtn, "AHOJ");
+        }
     }
 }
