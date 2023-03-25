@@ -11,14 +11,17 @@ namespace ArenaHra
         public MainForm()
         {
             Zbran zbranHrac = new Zbran("Mec", 3, 15, 10);
-            hrac = new Hrac("Matyas", 10, 100, zbranHrac);
+            hrac = new Hrac("Matyas", 10, 100, 4, zbranHrac);
             InitializeComponent();
             arenaBoje.Hide();
             staty.Hide();
+            inventar.Hide();
             arenaBoje.PridatHrace(hrac);
             staty.PridatHrace(hrac);
+            inventar.PridatHrace(hrac);
             arenaBoje.Finished += OnFinished;
             staty.Finished += OnFinished;
+            inventar.Finished += OnFinished;
             
         }
 
@@ -33,6 +36,12 @@ namespace ArenaHra
         {
             staty.Show();
 
+            SchovatMenu();
+        }
+
+        private void inventarBtn_Click(object sender, EventArgs e)
+        {
+            inventar.Show();
             SchovatMenu();
         }
 
@@ -64,6 +73,5 @@ namespace ArenaHra
             UkazatMenu();
         }
 
-        
     }
 }

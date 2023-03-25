@@ -35,12 +35,13 @@
             this.obchodBtn = new System.Windows.Forms.Button();
             this.odejitBtn = new System.Windows.Forms.Button();
             this.staty = new ArenaHra.Staty();
+            this.inventar = new ArenaHra.Inventar();
             this.SuspendLayout();
             // 
             // arenaBoje
             // 
             this.arenaBoje.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.arenaBoje.Location = new System.Drawing.Point(-5, -3);
+            this.arenaBoje.Location = new System.Drawing.Point(-2, 2);
             this.arenaBoje.Margin = new System.Windows.Forms.Padding(6);
             this.arenaBoje.Name = "arenaBoje";
             this.arenaBoje.Size = new System.Drawing.Size(992, 652);
@@ -74,6 +75,7 @@
             this.inventarBtn.TabIndex = 4;
             this.inventarBtn.Text = "Inventar";
             this.inventarBtn.UseVisualStyleBackColor = true;
+            this.inventarBtn.Click += new System.EventHandler(this.inventarBtn_Click);
             // 
             // obchodBtn
             // 
@@ -97,11 +99,20 @@
             // staty
             // 
             this.staty.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.staty.Location = new System.Drawing.Point(-5, -3);
+            this.staty.Location = new System.Drawing.Point(-2, 2);
             this.staty.Margin = new System.Windows.Forms.Padding(6);
             this.staty.Name = "staty";
             this.staty.Size = new System.Drawing.Size(992, 652);
             this.staty.TabIndex = 7;
+            // 
+            // inventar
+            // 
+            this.inventar.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.inventar.Location = new System.Drawing.Point(-2, 2);
+            this.inventar.Margin = new System.Windows.Forms.Padding(6);
+            this.inventar.Name = "inventar";
+            this.inventar.Size = new System.Drawing.Size(979, 652);
+            this.inventar.TabIndex = 8;
             // 
             // MainForm
             // 
@@ -115,6 +126,7 @@
             this.Controls.Add(this.arenaBtn);
             this.Controls.Add(this.arenaBoje);
             this.Controls.Add(this.staty);
+            this.Controls.Add(this.inventar);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainForm";
@@ -131,5 +143,6 @@
         private Button obchodBtn;
         private Button odejitBtn;
         private Staty staty;
+        private Inventar inventar;
     }
 }

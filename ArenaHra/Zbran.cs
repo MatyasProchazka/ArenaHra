@@ -9,28 +9,28 @@ namespace ArenaHra
     public class Zbran
     {
         public string Jmeno { get; private set; }
-        private int utok;
+        public int Utok { get; private set; }
         public int Cena { get; private set; }
-        private int kritickaSance;
+        public int KritickaSance { get; private set; }
 
 
         public Zbran(string jmeno, int utok, int kritickaSance, int cena)
         {
             this.Jmeno= jmeno;
-            this.utok= utok;
-            this.kritickaSance= kritickaSance;
+            this.Utok= utok;
+            this.KritickaSance= kritickaSance;
             this.Cena= cena;
         }
 
         public int PripocitatZbran()
         {
-            return JeZasahKriticky() ? utok * 2 : utok; 
+            return JeZasahKriticky() ? Utok * 2 : Utok; 
         }
 
         private bool JeZasahKriticky()
         {
             Random random = new();
-            if (random.Next(0, 101) < kritickaSance)
+            if (random.Next(0, 101) < KritickaSance)
             {
                 return true;
             }
@@ -39,5 +39,11 @@ namespace ArenaHra
                 return false;
             }
         }
+
+        public static Zbran VytvoritZbran(int pocetKol)
+        {
+            return new Zbran("Nic", 10, 20, 10);
+        }
+ 
     }
 }

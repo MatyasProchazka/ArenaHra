@@ -4,6 +4,9 @@
     <Compile Update="ArenaBoje.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Inventar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

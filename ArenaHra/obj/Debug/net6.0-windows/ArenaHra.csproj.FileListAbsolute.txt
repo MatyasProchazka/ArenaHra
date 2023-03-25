@@ -17,3 +17,4 @@ C:\Users\matya\Programming\ArenaHra\ArenaHra\obj\Debug\net6.0-windows\ArenaHra.g
 C:\Users\matya\Programming\ArenaHra\ArenaHra\obj\Debug\net6.0-windows\ref\ArenaHra.dll
 C:\Users\matya\Programming\ArenaHra\ArenaHra\obj\Debug\net6.0-windows\ArenaHra.ArenaBoje.resources
 C:\Users\matya\Programming\ArenaHra\ArenaHra\obj\Debug\net6.0-windows\ArenaHra.Staty.resources
+C:\Users\matya\Programming\ArenaHra\ArenaHra\obj\Debug\net6.0-windows\ArenaHra.Inventar.resources

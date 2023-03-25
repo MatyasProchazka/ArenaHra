@@ -10,15 +10,17 @@ namespace ArenaHra
     {
         public new string Jmeno { get; private set; }
         public new int MaxZivot { get; private set; }
-        
+
         private readonly Zbran zbran;
         public int PocetKol { get; set; }
         public new int Utok { get; private set; }
         protected new int zivot;
         public int Penize { get; private set; }
-        string[] listJmenProtivnik = { "Hugo", "Martin", "Jon", "Jakub", "SKeleton", "Roman", "Baba", "Jeliman", "SEXY", "DEBIL" };
+        private int velikostInventare;
+        private string[] listJmenProtivnik = { "Hugo", "Martin", "Jon", "Jakub", "SKeleton", "Roman", "Baba", "Jeliman", "SEXY", "DEBIL" };
+        private List<Zbran> inventar = new List<Zbran>();
 
-        public Hrac(string jmeno, int utok, int maxZivot, Zbran zbran) : base(jmeno, utok, maxZivot)
+        public Hrac(string jmeno, int utok, int maxZivot, int velikostInventare, Zbran zbran) : base(jmeno, utok, maxZivot)
         {
             this.zbran = zbran;
             this.Utok = utok;
@@ -27,6 +29,8 @@ namespace ArenaHra
             this.zivot = maxZivot;
             Penize= 0;
             PocetKol= 0;
+            this.velikostInventare = velikostInventare;
+            InicializaceInventare();
         }
 
         public override int Utoc(Postava protivnik)
@@ -58,6 +62,19 @@ namespace ArenaHra
         {
             Random rdm = new();
             return new Postava(listJmenProtivnik[rdm.Next(0, listJmenProtivnik.Length)], 5 + PocetKol + rdm.Next(1,  2 + 2 * PocetKol), 80 + 4 * PocetKol + rdm.Next(1, 2 + PocetKol * 2));
+        }
+
+        private void InicializaceInventare()
+        {
+            for (int i = 0; i < velikostInventare;i++)
+            {
+                inventar.Add(Zbran.VytvoritZbran(PocetKol));
+            }
+        }
+
+        public List<Zbran> ZiskatInventar()
+        {
+            return inventar;
         }
     }
 }
