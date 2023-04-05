@@ -28,6 +28,8 @@ namespace ArenaHra
                 hracUtokLabel.Text = hrac.Utok.ToString();
                 hracMaxZivotyLabel.Text = hrac.MaxZivot.ToString();
                 hracPenizeLabel.Text = hrac.Penize.ToString();
+                Zbran zbran = hrac.AktualniZbran();
+                hracZbranLabel.Text = String.Format("Zbran: " + zbran.Jmeno + "  Utok: " + zbran.Utok);
             }
         }
 
@@ -66,6 +68,12 @@ namespace ArenaHra
         private void utokPridaniBtn_MouseHover(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(utokPridaniBtn, "AHOJ");
+        }
+
+        public void Aktualizovat()
+        {
+            Zbran zbran = hrac.AktualniZbran();
+            hracZbranLabel.Text = String.Format("Zbran: " + zbran.Jmeno + "  Utok: " + zbran.Utok);
         }
     }
 }

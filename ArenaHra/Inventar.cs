@@ -15,6 +15,8 @@ namespace ArenaHra
         private Hrac hrac;
         private List<Zbran> inventar;
         public event EventHandler Finished;
+        private Zbran aktualniZbran;
+        private int aktualniIndex;
         public Inventar()
         {
             InitializeComponent();
@@ -40,12 +42,20 @@ namespace ArenaHra
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = listBox1.SelectedIndex;
-            Zbran zbran = inventar[index];
-            jmenoLabel.Text = String.Format("Jmeno: " + zbran.Jmeno);
-            utokLabel.Text = String.Format("Utok: " + zbran.Utok.ToString());
-            kritickaSanceLabel.Text = String.Format("Krit: " + zbran.KritickaSance.ToString());
-            cenaLabel.Text = String.Format("Cena: " + zbran.Cena.ToString());
+            try
+            {
+                aktualniIndex = listBox1.SelectedIndex;
+                aktualniZbran = inventar[aktualniIndex];
+                jmenoLabel.Text = String.Format("Jmeno: " + aktualniZbran.Jmeno);
+                utokLabel.Text = String.Format("Utok: " + aktualniZbran.Utok.ToString());
+                kritickaSanceLabel.Text = String.Format("Krit: " + aktualniZbran.KritickaSance.ToString());
+                cenaLabel.Text = String.Format("Cena: " + aktualniZbran.Cena.ToString());
+            }
+            catch 
+            {
+                
+            }
+            
 
         }
 
@@ -61,6 +71,20 @@ namespace ArenaHra
             {
                 Finished(this, EventArgs.Empty);
             }
+        }
+
+        private void nasaditBtn_Click(object sender, EventArgs e)
+        {
+            Zbran zbran = hrac.ZmenitZbran(aktualniZbran);
+            inventar.RemoveAt(aktualniIndex);
+            inventar.Insert(aktualniIndex, zbran);
+            ObnovitListBox();
+        }
+
+        public void ObnovitListBox()
+        {
+            listBox1.DataSource = null;
+            InicializaceListBox();
         }
     }
 }

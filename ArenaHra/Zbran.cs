@@ -42,7 +42,8 @@ namespace ArenaHra
 
         public static Zbran VytvoritZbran(int pocetKol)
         {
-            return new Zbran("Nic", 10, 20, 10);
+            Random rnd= new();
+            return new Zbran("Nic", 10 + rnd.Next(0, 10), 20, 10);
         }
  
     }

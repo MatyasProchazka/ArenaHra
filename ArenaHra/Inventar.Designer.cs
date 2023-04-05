@@ -41,7 +41,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 32;
+            this.listBox1.ItemHeight = 48;
             this.listBox1.Location = new System.Drawing.Point(56, 49);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(691, 388);
@@ -54,7 +54,7 @@
             this.jmenoLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.jmenoLabel.Location = new System.Drawing.Point(67, 455);
             this.jmenoLabel.Name = "jmenoLabel";
-            this.jmenoLabel.Size = new System.Drawing.Size(52, 21);
+            this.jmenoLabel.Size = new System.Drawing.Size(78, 32);
             this.jmenoLabel.TabIndex = 1;
             this.jmenoLabel.Text = "label1";
             // 
@@ -64,7 +64,7 @@
             this.utokLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.utokLabel.Location = new System.Drawing.Point(263, 455);
             this.utokLabel.Name = "utokLabel";
-            this.utokLabel.Size = new System.Drawing.Size(52, 21);
+            this.utokLabel.Size = new System.Drawing.Size(78, 32);
             this.utokLabel.TabIndex = 2;
             this.utokLabel.Text = "label2";
             // 
@@ -74,7 +74,7 @@
             this.kritickaSanceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kritickaSanceLabel.Location = new System.Drawing.Point(444, 455);
             this.kritickaSanceLabel.Name = "kritickaSanceLabel";
-            this.kritickaSanceLabel.Size = new System.Drawing.Size(52, 21);
+            this.kritickaSanceLabel.Size = new System.Drawing.Size(78, 32);
             this.kritickaSanceLabel.TabIndex = 3;
             this.kritickaSanceLabel.Text = "label3";
             // 
@@ -84,7 +84,7 @@
             this.cenaLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cenaLabel.Location = new System.Drawing.Point(641, 455);
             this.cenaLabel.Name = "cenaLabel";
-            this.cenaLabel.Size = new System.Drawing.Size(52, 21);
+            this.cenaLabel.Size = new System.Drawing.Size(78, 32);
             this.cenaLabel.TabIndex = 4;
             this.cenaLabel.Text = "label4";
             // 
@@ -96,6 +96,7 @@
             this.nasaditBtn.TabIndex = 5;
             this.nasaditBtn.Text = "Nasadit";
             this.nasaditBtn.UseVisualStyleBackColor = true;
+            this.nasaditBtn.Click += new System.EventHandler(this.nasaditBtn_Click);
             // 
             // button2
             // 
@@ -118,7 +119,7 @@
             // 
             // Inventar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.odejitBtn);
             this.Controls.Add(this.button2);

@@ -11,7 +11,7 @@ namespace ArenaHra
         public new string Jmeno { get; private set; }
         public new int MaxZivot { get; private set; }
 
-        private readonly Zbran zbran;
+        private Zbran zbran;
         public int PocetKol { get; set; }
         public new int Utok { get; private set; }
         protected new int zivot;
@@ -75,6 +75,17 @@ namespace ArenaHra
         public List<Zbran> ZiskatInventar()
         {
             return inventar;
+        }
+        public Zbran AktualniZbran()
+        {
+            return zbran;
+        }
+
+        public Zbran ZmenitZbran(Zbran zbran)
+        {
+            Zbran temporaryZbran = this.zbran;
+            this.zbran = zbran;
+            return temporaryZbran;
         }
     }
 }

@@ -38,6 +38,7 @@
             this.penizePridatBtn = new System.Windows.Forms.Button();
             this.odejitBtn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.hracZbranLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hracJmenoLabel
@@ -117,10 +118,20 @@
             this.odejitBtn.UseVisualStyleBackColor = true;
             this.odejitBtn.Click += new System.EventHandler(this.odejitBtn_Click);
             // 
+            // hracZbranLabel
+            // 
+            this.hracZbranLabel.AutoSize = true;
+            this.hracZbranLabel.Location = new System.Drawing.Point(104, 456);
+            this.hracZbranLabel.Name = "hracZbranLabel";
+            this.hracZbranLabel.Size = new System.Drawing.Size(147, 48);
+            this.hracZbranLabel.TabIndex = 9;
+            this.hracZbranLabel.Text = "Prazdne";
+            // 
             // Staty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.hracZbranLabel);
             this.Controls.Add(this.odejitBtn);
             this.Controls.Add(this.penizePridatBtn);
             this.Controls.Add(this.maxZivotPridatBtn);
@@ -149,5 +160,6 @@
         private Button penizePridatBtn;
         private Button odejitBtn;
         private ToolTip toolTip1;
+        private Label hracZbranLabel;
     }
 }

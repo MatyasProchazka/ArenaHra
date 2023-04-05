@@ -35,13 +35,14 @@ namespace ArenaHra
         private void statyBtn_Click(object sender, EventArgs e)
         {
             staty.Show();
-
+            staty.Aktualizovat();
             SchovatMenu();
         }
 
         private void inventarBtn_Click(object sender, EventArgs e)
         {
             inventar.Show();
+            //inventar.ObnovitListBox();
             SchovatMenu();
         }
 
