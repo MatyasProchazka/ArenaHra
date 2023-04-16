@@ -35,20 +35,22 @@ namespace ArenaHra
 
         private void utokPridaniBtn_Click(object sender, EventArgs e)
         {
-            hrac.PridatUtok();
-            hracUtokLabel.Text = hrac.Utok.ToString();
+            if (hrac.PridatUtok())
+            {
+                hracUtokLabel.Text = hrac.Utok.ToString();
+                hracPenizeLabel.Text = hrac.Penize.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Nedostatek penez");
+            }
+            
         }
 
         private void maxZivotPridatBtn_Click(object sender, EventArgs e)
         {
             hrac.PridatMaxZivoty();
             hracMaxZivotyLabel.Text = hrac.MaxZivot.ToString();
-        }
-
-        private void penizePridatBtn_Click(object sender, EventArgs e)
-        {
-            hrac.PridatPenize();
-            hracPenizeLabel.Text = hrac.Penize.ToString();
         }
 
         private void odejitBtn_Click(object sender, EventArgs e)
@@ -67,13 +69,19 @@ namespace ArenaHra
 
         private void utokPridaniBtn_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(utokPridaniBtn, "AHOJ");
+            toolTip1.SetToolTip(utokPridaniBtn, String.Format("Cena vylepseni: " + hrac.CenaUtoku.ToString() + "/bod"));
         }
 
         public void Aktualizovat()
         {
             Zbran zbran = hrac.AktualniZbran();
             hracZbranLabel.Text = String.Format("Zbran: " + zbran.Jmeno + "  Utok: " + zbran.Utok);
+            hracPenizeLabel.Text = hrac.Penize.ToString();
+        }
+
+        private void maxZivotPridatBtn_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(maxZivotPridatBtn, String.Format("Cena vylepseni: " + hrac.CenaMaxZivotu.ToString() + "/bod"));
         }
     }
 }

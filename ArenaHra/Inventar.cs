@@ -53,7 +53,7 @@ namespace ArenaHra
             }
             catch 
             {
-                
+                aktualniIndex = 0;
             }
             
 

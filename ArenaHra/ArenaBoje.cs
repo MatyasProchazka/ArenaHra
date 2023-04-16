@@ -17,11 +17,13 @@ namespace ArenaHra
         private Hrac hrac;
         private Postava protivnik;
         private bool koloHrace = true;
+        private int vyhranePenize;
 
         public event EventHandler Finished;
         public ArenaBoje()
         {
             InitializeComponent();
+            vyhranePenize = 0;
         }
 
 
@@ -121,7 +123,10 @@ namespace ArenaHra
                     MessageBox.Show("Kurva 2");
                 }
                 else {
-                    MessageBox.Show("Vyhral jsi, vracis se do menu");
+                    vyhranePenize = 1 + hrac.PocetKol * 2;
+                    string message = String.Format("Vyhral jsi, ziskal jsi {0} zlataku, vracis se do menu", vyhranePenize.ToString());
+                    MessageBox.Show(message);
+                    hrac.PridatPenize(vyhranePenize);
                     hrac.PocetKol += 1;
                     OnFinished();
                 }

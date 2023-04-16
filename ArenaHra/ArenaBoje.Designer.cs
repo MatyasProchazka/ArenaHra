@@ -46,9 +46,9 @@
             // 
             this.protivnikZivot.AutoSize = true;
             this.protivnikZivot.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.protivnikZivot.Location = new System.Drawing.Point(659, 170);
+            this.protivnikZivot.Location = new System.Drawing.Point(670, 170);
             this.protivnikZivot.Name = "protivnikZivot";
-            this.protivnikZivot.Size = new System.Drawing.Size(88, 45);
+            this.protivnikZivot.Size = new System.Drawing.Size(132, 65);
             this.protivnikZivot.TabIndex = 1;
             this.protivnikZivot.Text = "Zivot";
             // 
@@ -56,9 +56,9 @@
             // 
             this.protivnikJmeno.AutoSize = true;
             this.protivnikJmeno.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.protivnikJmeno.Location = new System.Drawing.Point(595, 40);
+            this.protivnikJmeno.Location = new System.Drawing.Point(648, 37);
             this.protivnikJmeno.Name = "protivnikJmeno";
-            this.protivnikJmeno.Size = new System.Drawing.Size(296, 89);
+            this.protivnikJmeno.Size = new System.Drawing.Size(444, 133);
             this.protivnikJmeno.TabIndex = 2;
             this.protivnikJmeno.Text = "Protivnik";
             // 
@@ -76,9 +76,9 @@
             // 
             this.hracJmeno.AutoSize = true;
             this.hracJmeno.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.hracJmeno.Location = new System.Drawing.Point(77, 40);
+            this.hracJmeno.Location = new System.Drawing.Point(63, 40);
             this.hracJmeno.Name = "hracJmeno";
-            this.hracJmeno.Size = new System.Drawing.Size(174, 89);
+            this.hracJmeno.Size = new System.Drawing.Size(260, 133);
             this.hracJmeno.TabIndex = 3;
             this.hracJmeno.Text = "Hrac";
             // 
@@ -86,9 +86,9 @@
             // 
             this.hracZivot.AutoSize = true;
             this.hracZivot.Font = new System.Drawing.Font("Segoe UI", 23F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.hracZivot.Location = new System.Drawing.Point(123, 173);
+            this.hracZivot.Location = new System.Drawing.Point(95, 173);
             this.hracZivot.Name = "hracZivot";
-            this.hracZivot.Size = new System.Drawing.Size(86, 42);
+            this.hracZivot.Size = new System.Drawing.Size(127, 62);
             this.hracZivot.TabIndex = 4;
             this.hracZivot.Text = "Zivot";
             // 
@@ -102,7 +102,7 @@
             // 
             // protivnikProgressBar
             // 
-            this.protivnikProgressBar.Location = new System.Drawing.Point(625, 247);
+            this.protivnikProgressBar.Location = new System.Drawing.Point(648, 247);
             this.protivnikProgressBar.Name = "protivnikProgressBar";
             this.protivnikProgressBar.Size = new System.Drawing.Size(249, 31);
             this.protivnikProgressBar.TabIndex = 6;
@@ -112,9 +112,9 @@
             // 
             this.hracUbralLabel.AutoSize = true;
             this.hracUbralLabel.ForeColor = System.Drawing.Color.Red;
-            this.hracUbralLabel.Location = new System.Drawing.Point(550, 247);
+            this.hracUbralLabel.Location = new System.Drawing.Point(548, 247);
             this.hracUbralLabel.Name = "hracUbralLabel";
-            this.hracUbralLabel.Size = new System.Drawing.Size(27, 32);
+            this.hracUbralLabel.Size = new System.Drawing.Size(39, 48);
             this.hracUbralLabel.TabIndex = 7;
             this.hracUbralLabel.Text = "0";
             // 
@@ -124,7 +124,7 @@
             this.protivnikUbralLabel.ForeColor = System.Drawing.Color.Red;
             this.protivnikUbralLabel.Location = new System.Drawing.Point(329, 247);
             this.protivnikUbralLabel.Name = "protivnikUbralLabel";
-            this.protivnikUbralLabel.Size = new System.Drawing.Size(27, 32);
+            this.protivnikUbralLabel.Size = new System.Drawing.Size(39, 48);
             this.protivnikUbralLabel.TabIndex = 8;
             this.protivnikUbralLabel.Text = "0";
             // 
@@ -133,7 +133,7 @@
             this.hracUtokLabel.AutoSize = true;
             this.hracUtokLabel.Location = new System.Drawing.Point(77, 300);
             this.hracUtokLabel.Name = "hracUtokLabel";
-            this.hracUtokLabel.Size = new System.Drawing.Size(27, 32);
+            this.hracUtokLabel.Size = new System.Drawing.Size(39, 48);
             this.hracUtokLabel.TabIndex = 9;
             this.hracUtokLabel.Text = "0";
             // 
@@ -142,13 +142,13 @@
             this.protivnikUtokLabel.AutoSize = true;
             this.protivnikUtokLabel.Location = new System.Drawing.Point(659, 300);
             this.protivnikUtokLabel.Name = "protivnikUtokLabel";
-            this.protivnikUtokLabel.Size = new System.Drawing.Size(27, 32);
+            this.protivnikUtokLabel.Size = new System.Drawing.Size(39, 48);
             this.protivnikUtokLabel.TabIndex = 10;
             this.protivnikUtokLabel.Text = "0";
             // 
             // ArenaBoje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.protivnikUtokLabel);
             this.Controls.Add(this.hracUtokLabel);

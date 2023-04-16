@@ -11,6 +11,9 @@ namespace ArenaHra
         public new string Jmeno { get; private set; }
         public new int MaxZivot { get; private set; }
 
+        public int CenaUtoku { get; private set; }
+        public int CenaMaxZivotu { get; private set; }
+
         private Zbran zbran;
         public int PocetKol { get; set; }
         public new int Utok { get; private set; }
@@ -29,6 +32,8 @@ namespace ArenaHra
             this.zivot = maxZivot;
             Penize= 0;
             PocetKol= 0;
+            CenaMaxZivotu = 2;
+            CenaUtoku = 2;
             this.velikostInventare = velikostInventare;
             InicializaceInventare();
         }
@@ -42,20 +47,41 @@ namespace ArenaHra
         }
 
 
-        public void PridatUtok()
+        public bool PridatUtok()
         {
-            Utok += 1;
+            if (Penize >= CenaUtoku)
+            {
+                Utok += 1;
+                Penize = Penize - CenaUtoku;
+                CenaUtoku += 1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void PridatMaxZivoty()
+        public bool PridatMaxZivoty()
         {
-            MaxZivot += 10;
-            zivot = MaxZivot;
+            if (Penize > CenaMaxZivotu)
+            {
+                MaxZivot += 10;
+                zivot = MaxZivot;
+                Penize = Penize - CenaMaxZivotu;
+                CenaMaxZivotu += 2;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
-        public void PridatPenize()
+        public void PridatPenize(int pocet)
         {
-            Penize += 1;
+            Penize += pocet;
         }
 
         public Postava VygenerovatProtivnika()

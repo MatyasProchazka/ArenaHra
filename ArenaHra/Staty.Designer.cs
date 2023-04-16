@@ -35,18 +35,21 @@
             this.hracPenizeLabel = new System.Windows.Forms.Label();
             this.utokPridaniBtn = new System.Windows.Forms.Button();
             this.maxZivotPridatBtn = new System.Windows.Forms.Button();
-            this.penizePridatBtn = new System.Windows.Forms.Button();
             this.odejitBtn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.hracZbranLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hracJmenoLabel
             // 
             this.hracJmenoLabel.AutoSize = true;
-            this.hracJmenoLabel.Location = new System.Drawing.Point(460, 44);
+            this.hracJmenoLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.hracJmenoLabel.Location = new System.Drawing.Point(444, 22);
             this.hracJmenoLabel.Name = "hracJmenoLabel";
-            this.hracJmenoLabel.Size = new System.Drawing.Size(94, 48);
+            this.hracJmenoLabel.Size = new System.Drawing.Size(133, 65);
             this.hracJmenoLabel.TabIndex = 0;
             this.hracJmenoLabel.Text = "Hrac";
             // 
@@ -97,16 +100,7 @@
             this.maxZivotPridatBtn.Text = "+";
             this.maxZivotPridatBtn.UseVisualStyleBackColor = true;
             this.maxZivotPridatBtn.Click += new System.EventHandler(this.maxZivotPridatBtn_Click);
-            // 
-            // penizePridatBtn
-            // 
-            this.penizePridatBtn.Location = new System.Drawing.Point(785, 254);
-            this.penizePridatBtn.Name = "penizePridatBtn";
-            this.penizePridatBtn.Size = new System.Drawing.Size(65, 70);
-            this.penizePridatBtn.TabIndex = 6;
-            this.penizePridatBtn.Text = "+";
-            this.penizePridatBtn.UseVisualStyleBackColor = true;
-            this.penizePridatBtn.Click += new System.EventHandler(this.penizePridatBtn_Click);
+            this.maxZivotPridatBtn.MouseHover += new System.EventHandler(this.maxZivotPridatBtn_MouseHover);
             // 
             // odejitBtn
             // 
@@ -127,13 +121,42 @@
             this.hracZbranLabel.TabIndex = 9;
             this.hracZbranLabel.Text = "Prazdne";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(91, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 48);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Utok";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(460, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 48);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Zivoty";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(762, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 48);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Penize";
+            // 
             // Staty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.hracZbranLabel);
             this.Controls.Add(this.odejitBtn);
-            this.Controls.Add(this.penizePridatBtn);
             this.Controls.Add(this.maxZivotPridatBtn);
             this.Controls.Add(this.utokPridaniBtn);
             this.Controls.Add(this.hracPenizeLabel);
@@ -157,9 +180,11 @@
         private Label hracPenizeLabel;
         private Button utokPridaniBtn;
         private Button maxZivotPridatBtn;
-        private Button penizePridatBtn;
         private Button odejitBtn;
         private ToolTip toolTip1;
         private Label hracZbranLabel;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
