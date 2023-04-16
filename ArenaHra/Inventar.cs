@@ -32,6 +32,7 @@ namespace ArenaHra
 
         private void InicializaceListBox()
         {
+            inventar = hrac.ZiskatInventar();
             List<string> list = new List<string>(); 
             foreach (Zbran zbran in inventar) 
             {
@@ -54,6 +55,7 @@ namespace ArenaHra
             catch 
             {
                 aktualniIndex = 0;
+                aktualniZbran = new Zbran("praznde", 0, 0, 0);
             }
             
 
@@ -75,16 +77,51 @@ namespace ArenaHra
 
         private void nasaditBtn_Click(object sender, EventArgs e)
         {
-            Zbran zbran = hrac.ZmenitZbran(aktualniZbran);
-            inventar.RemoveAt(aktualniIndex);
-            inventar.Insert(aktualniIndex, zbran);
-            ObnovitListBox();
+            try
+            {
+               
+                Zbran zbran = hrac.ZmenitZbran(aktualniZbran);
+                inventar.RemoveAt(aktualniIndex);
+                inventar.Insert(aktualniIndex, zbran);
+                ObnovitListBox();
+               
+                
+            }
+            catch
+            {
+                MessageBox.Show("Neplatna zvolena zbran");
+            };
+            
         }
 
         public void ObnovitListBox()
         {
             listBox1.DataSource = null;
             InicializaceListBox();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hrac.PridatPenize(aktualniZbran.Cena / 2);
+                hrac.VymazatZbran(aktualniIndex);
+                ObnovitListBox();
+                if (inventar.Count == 0)
+                {
+                    jmenoLabel.Hide();
+                    utokLabel.Hide();
+                    kritickaSanceLabel.Hide();
+                    cenaLabel.Hide();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("neplatna zvolena zbran");
+            }
+            
+            
+
         }
     }
 }

@@ -113,5 +113,12 @@ namespace ArenaHra
             this.zbran = zbran;
             return temporaryZbran;
         }
+
+        public void VymazatZbran(int index)
+        {
+           
+            inventar.RemoveAt(index);
+           
+        }
     }
 }
